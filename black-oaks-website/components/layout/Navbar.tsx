@@ -1,77 +1,156 @@
-import Link from 'next/link';
+import Link from "next/link";
+import MobileNavbar from "./MobileNavbar";
+
+const navItems = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Listings",
+    href: "/properties",
+  },
+  {
+    label: "Mortgage Calculator",
+    href: "/mortgage-calculator",
+  },
+  {
+    label: "Property Search",
+    href: "property-search",
+  },
+  {
+    label: "Contact Me",
+    href: "/contact",
+  },
+];
 
 export default function Navbar() {
-    return (
-        <header className="bg-[#0b0b0b] text-white">
-            <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-6 py-6 md:px-8 xl:px-12">
-                
-                {/* Left side: company + agent info */}
-                <div className="flex min-w-0 items-center gap-4 md:gap-6 xl:gap-12">
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
 
-                    {/* Company logo placeholder */}
-                    <Link href='/' className="flex shrink-0 items-center gap-3 xl:gap-8">
-                        <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-red-600 text-xs font-bold text-red-500 xl:h-20 xl:w-20">
-                            BO
-                        </div>
-                        
-                        {/* Text beside the company logo */}
-                        <div className="hidden lg:block">
-                            <p className="whitespace-nowrap text-base font-bold tracking-[0.18em] xl:text-lg">
-                                BLACK OAKS
-                            </p>
+      {/* Glass Navbar */}
+      <nav
+        className="
+          relative
+          mx-auto
+          flex
+          w-full
+          max-w-[1800px]
+          items-center
+          justify-between
+          rounded-2xl
+          border border-white/7
+          bg-black/20
+          px-4
+          py-3
+          shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+          backdrop-blur-xl
+          sm:px-6
+          lg:px-8
+        "
+      >
 
-                            <p className="whitespace-nowrap text-xs uppercase tracking-[0.25em] text-red-500">
-                                Real Estate
-                            </p>
-                        </div>
-                    </Link>
+        {/* Left Side: Logo + Black Oaks */}
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-3 sm:gap-4"
+        >
+          {/* Temporary Logo */}
+          <div
+            className="
+              flex
+              h-12
+              w-12
+              shrink-0
+              items-center
+              justify-center
+              border
+              border-red-600
+              text-xs
+              font-bold
+              text-red-500
+              sm:h-14
+              sm:w-14
+            "
+          >
+            BO
+          </div>
 
-                    {/* Agent Headshot Placeholder */}
-                    <div className="hidden h-20 w-20 shrink-0 items-center justify-center rounded-full bg-zinc-800 text-xs text-zinc-400 md:flex xl:h-28 xl:w-28">
-                        Photo
-                    </div>
+          {/* Company Name */}
+          <div>
+            <p
+              className="
+                whitespace-nowrap
+                text-sm
+                font-bold
+                tracking-[0.18em]
+                text-white
+                sm:text-base
+                lg:text-lg
+              "
+            >
+              BLACK OAKS
+            </p>
 
-                    {/* Agent Profile Information */}
-                    <div className="hidden min-w-0 lg:block">
-                        <p className="truncate text-base font-semibold">
-                            AHSAN ALI
-                        </p>
-                        <p className="mt-1 whitespace-nowrap text-xs uppercase tracking-[0.15em] text-zinc-400">
-                            Real Estate Broker
-                        </p>
+            <p
+              className="
+                whitespace-nowrap
+                text-[10px]
+                uppercase
+                tracking-[0.25em]
+                text-red-500
+                sm:text-xs
+              "
+            >
+              Real Estate
+            </p>
+          </div>
+        </Link>
 
-                        <div className="mt-2 space-y-1 text-xs text-zinc-400">
-                            <p className="whitespace-nowrap">
-                                AHSAN.ALI@BLACKOAKS.CA
-                            </p>
-                            
-                            <p className="whitespace-nowrap">
-                                (647) 886 1289
-                            </p>
-                        </div>
-                    </div>
+        {/* Desktop Navigation */}
+        <div
+          className="
+            hidden
+            items-center
+            gap-6
+            lg:flex
+            xl:gap-10
+            2xl:gap-14
+          "
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="
+                relative
+                whitespace-nowrap
+                text-sm
+                font-semibold
+                text-white
+                transition-colors
+                after:absolute
+                after:-bottom-2
+                after:left-0
+                after:h-[2px]
+                after:w-0
+                after:bg-red-500
+                after:transition-all
+                after:duration-300
+                hover:text-red-500
+                hover:after:w-full
+                xl:text-base
+              "
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
 
-                </div>
+        {/* Mobile Navigation */}
+        <MobileNavbar items={navItems} />
 
-                {/* Right side: User Navigation */}
-                <div className="hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-16">
-                    <Link href="/" className="relative whitespace-nowrap text-base font-semibold transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:text-red-500 hover:after:w-full">
-                        Home
-                    </Link>
-                    
-                    <Link href="/" className="relative whitespace-nowrap text-base font-semibold transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:text-red-500 hover:after:w-full">
-                        Listings
-                    </Link>
-
-                    <Link href="/mortgage-calculator" className="relative text-base font-semibold transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:text-red-500 hover:after:w-full">
-                        Mortgage Calculator
-                    </Link>
-
-                    <Link href="/contact" className="relative text-base font-semibold transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:text-red-500 hover:after:w-full">
-                        Contact Me
-                    </Link>
-                </div>
-            </nav>
-        </header>
-    );
+      </nav>
+    </header>
+  );
 }
