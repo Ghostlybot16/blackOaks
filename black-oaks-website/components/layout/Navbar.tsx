@@ -38,7 +38,7 @@ export default function Navbar() {
           max-w-[1800px]
           items-center
           justify-between
-          rounded-2xl
+          rounded-4xl
           border border-white/7
           bg-black/20
           px-4
