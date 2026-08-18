@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PropertySearch from "./PropertySearch";
 
 export default function Hero() {
     return (
@@ -33,7 +34,9 @@ export default function Hero() {
                     pt-32
                     sm:px-8
                     lg:px-12
-                    xl:px-16">
+                    xl:px-16
+                "
+            >
                 
                 <div className="max-w-3xl">
                     
@@ -88,7 +91,29 @@ export default function Hero() {
                             </p>
 
                 </div>
+
+                {/* Property Search */}
+                <div 
+                    className="
+                        absolute
+                        bottom-40
+                        left-0
+                        right-0
+                        z-20
+                        px-6
+                        sm:px-8
+                        lg:px-12
+                        xl:px-16
+                    "
+                >
+                    <div className="mx-auto w-full max-w-[1800px]">
+                        <PropertySearch />
+
+                    </div>
+                </div>
+        
             </div>
+
         </section>
     );
 }
