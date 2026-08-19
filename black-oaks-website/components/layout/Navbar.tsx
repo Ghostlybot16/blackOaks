@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import MobileNavbar from "./MobileNavbar";
+import { AnimatedBackground } from "../motion-primitives/animated-background";
 
 const navItems = [
   {
@@ -16,7 +18,7 @@ const navItems = [
   },
   {
     label: "Property Search",
-    href: "property-search",
+    href: "/property-search",
   },
   {
     label: "Contact Me",
@@ -35,16 +37,17 @@ export default function Navbar() {
           mx-auto
           flex
           w-full
-          max-w-[1800px]
+          max-w-site
           items-center
           justify-between
-          rounded-4xl
-          border border-white/7
-          bg-black/20
+          rounded-navbar
+          border 
+          border-glass-line-subtle
+          bg-glass-navbar
           px-4
           py-3
-          shadow-[0_8px_30px_rgba(0,0,0,0.25)]
-          backdrop-blur-xl
+          shadow-navbar
+          backdrop-blur-glass-strong
           sm:px-6
           lg:px-8
         "
@@ -65,10 +68,10 @@ export default function Navbar() {
               items-center
               justify-center
               border
-              border-red-600
+              border-brand-primary
               text-xs
               font-bold
-              text-red-500
+              text-brand-primary
               sm:h-14
               sm:w-14
             "
@@ -83,8 +86,8 @@ export default function Navbar() {
                 whitespace-nowrap
                 text-sm
                 font-bold
-                tracking-[0.18em]
-                text-white
+                tracking-brand
+                text-content-on-dark
                 sm:text-base
                 lg:text-lg
               "
@@ -97,8 +100,8 @@ export default function Navbar() {
                 whitespace-nowrap
                 text-[10px]
                 uppercase
-                tracking-[0.25em]
-                text-red-500
+                tracking-eyebrow
+                text-brand-primary
                 sm:text-xs
               "
             >
@@ -108,43 +111,47 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div
-          className="
-            hidden
-            items-center
-            gap-6
-            lg:flex
-            xl:gap-10
-            2xl:gap-14
-          "
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="
-                relative
-                whitespace-nowrap
-                text-sm
-                font-semibold
-                text-white
-                transition-colors
-                after:absolute
-                after:-bottom-2
-                after:left-0
-                after:h-[2px]
-                after:w-0
-                after:bg-red-500
-                after:transition-all
-                after:duration-300
-                hover:text-red-500
-                hover:after:w-full
-                xl:text-base
-              "
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden lg:flex">
+          <AnimatedBackground
+            defaultValue={navItems[0].href}
+            className="
+              rounded-pill
+              bg-glass-highlight
+              backdrop-blur-glass-soft
+            "
+            transition={{
+              type: "spring",
+              bounce: 0.2,
+              duration: 0.3,
+            }}
+            enableHover
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                data-id={item.href}
+                className="
+                  relative
+                  z-10
+                  whitespace-nowrap
+                  rounded-pill
+                  px-4
+                  py-2
+                  text-sm
+                  font-semibold
+                  text-content-on-dark
+                  transition-colors
+                  duration-300
+                  hover:text-brand-primary
+                  xl:px-5
+                  xl:text-base
+                "
+              >
+                {item.label}
+              </Link>
+            ))}
+          </AnimatedBackground>
         </div>
 
         {/* Mobile Navigation */}

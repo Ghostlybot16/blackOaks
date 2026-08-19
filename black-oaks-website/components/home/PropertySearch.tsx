@@ -37,8 +37,8 @@ function SearchDropdown({
                         text-[11px]
                         font-semibold
                         uppercase
-                        tracking-[0.2em]
-                        text-zinc-500
+                        tracking-label
+                        text-content-muted
                     "
                 >
                     {label}
@@ -57,7 +57,7 @@ function SearchDropdown({
                         text-left
                         text-sm
                         font-medium
-                        text-zinc-900
+                        text-content-primary
                     "
                 >
                         <span>
@@ -101,11 +101,11 @@ function SearchDropdown({
                         h-[140px]
                         overflow-y-auto
                         overscroll-contain
-                        rounded-xl
+                        rounded-panel
                         border
-                        border-zinc-200
-                        bg-[#f5f1e8]
-                        shadow-[0_15px_40px_rgba(0,0,0,0.3)]
+                        border-dropdown-border
+                        bg-surface-search
+                        shadow-dropdown
                     "
                 >
                     {options.map((option) => (
@@ -124,9 +124,9 @@ function SearchDropdown({
                                 text-left
                                 text-sm
                                 font-medium
-                                text-zinc-800
+                                text-content-secondary
                                 transition-colors
-                                hover:bg-zinc-200
+                                hover:bg-surface-search-hover
                             "
                         >
                             {option.label}
@@ -143,13 +143,13 @@ export default function PropertySearch() {
         <div
             className="
                 w-full
-                rounded-xl
+                rounded-panel
                 border
-                border-white/7
-                bg-black/30
+                border-glass-line-subtle
+                bg-glass-search
                 p-2
-                shadow-[0_12px_40px_rgba(0,0,0,0.4)]
-                backdrop-blur-lg
+                shadow-search
+                backdrop-blur-glass
             "
         >
             {/* Search Bar Header */}
@@ -161,8 +161,8 @@ export default function PropertySearch() {
                     text-[12px]
                     font-semibold
                     uppercase
-                    tracking-[0.22em]
-                    text-white/70
+                    tracking-section-label
+                    text-content-on-dark/70
                 "
             >
                 Find Your Home
@@ -173,8 +173,8 @@ export default function PropertySearch() {
                     grid
                     w-full
                     grid-cols-1
-                    rounded-xl
-                    bg-[#f5f1e8]/95
+                    rounded-panel
+                    bg-surface-search-translucent
                     md:grid-cols-2
                     xl:grid-cols-[1.2fr_1fr_1fr_auto]
                 "
@@ -200,7 +200,7 @@ export default function PropertySearch() {
                 />
 
                 {/* Property Type */}
-                <div className="border-zinc-300 xl:border-l">
+                <div className="border-field-divider xl:border-l">
                     <SearchDropdown
                         label="Property Type"
                         placeholder="Any Type"
@@ -226,7 +226,7 @@ export default function PropertySearch() {
                 </div>
 
                 {/* Price Range */}
-                <div className="border-zinc-300 xl:border-l">
+                <div className="border-field-divider xl:border-l">
                     <SearchDropdown
                         label="Price Range"
                         placeholder="Any Price"
@@ -270,16 +270,16 @@ export default function PropertySearch() {
                         className="
                             w-full
                             whitespace-nowrap
-                            rounded-full
-                            bg-[#171714]
+                            rounded-pill
+                            bg-surface-action-dark
                             px-8
                             py-4
                             text-sm
                             font-semibold
-                            text-white
+                            text-content-on-dark
                             transition-colors
                             duration-300
-                            hover:bg-red-600
+                            hover:bg-brand-primary-hover
                             xl:w-auto
                         "
                     >
@@ -290,5 +290,3 @@ export default function PropertySearch() {
         </div>
     );
 }
-
-              

@@ -1,0 +1,314 @@
+/* Black Oaks Design System */
+
+
+/*
+    Fonts loaded by next/font in app/layout.tsx
+*/
+@theme inline {
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+
+/*
+    Black Oaks design tokens
+*/
+@theme {
+
+    /* ---------- BRAND ---------- */
+
+    --color-brand-primary: #fb2c36;
+    --color-brand-primary-hover: #e7000b;
+
+
+    /* ---------- CONTENT / TEXT ---------- */
+
+    --color-content-on-dark: #ffffff;
+    --color-content-on-dark-muted: #d4d4d8;
+
+    --color-content-primary: #18181b;
+    --color-content-secondary: #27272a;
+    --color-content-muted: #71717a;
+
+
+    /* ---------- SURFACES ---------- */
+
+    --color-surface-page: #0b0b0b;
+
+    --color-surface-search: #f5f1e8;
+    --color-surface-search-translucent: rgb(245 241 232 / 0.95);
+    --color-surface-search-hover: #e4e4e7;
+
+    --color-surface-action-dark: #171714;
+
+
+    /* ---------- HERO ---------- */
+
+    --color-overlay-hero: rgb(0 0 0 / 0.40);
+
+
+    /* ---------- GLASS ---------- */
+
+    --color-glass-navbar: rgb(0 0 0 / 0.20);
+    --color-glass-search: rgb(0 0 0 / 0.30);
+    --color-glass-menu: rgb(0 0 0 / 0.80);
+    --color-glass-highlight: rgb(255 255 255 / 0.10);
+
+    --color-glass-line-subtle: rgb(255 255 255 / 0.07);
+    --color-glass-line: rgb(255 255 255 / 0.10);
+
+
+    /* ---------- DIVIDERS / BORDERS ---------- */
+
+    --color-field-divider: #d4d4d8;
+    --color-dropdown-border: #e4e4e7;
+
+
+    /* ---------- SITE WIDTH ---------- */
+
+    --container-site: 112.5rem;
+
+
+    /* ---------- BORDER RADIUS ---------- */
+
+    --radius-navbar: 2rem;
+    --radius-panel: 0.75rem;
+    --radius-menu: 1rem;
+    --radius-control: 0.5rem;
+    --radius-pill: 9999px;
+
+
+    /* ---------- SHADOWS ---------- */
+
+    --shadow-navbar: 0 8px 30px rgb(0 0 0 / 0.25);
+    --shadow-search: 0 12px 40px rgb(0 0 0 / 0.40);
+    --shadow-dropdown: 0 15px 40px rgb(0 0 0 / 0.30);
+
+
+    /* ---------- LETTER SPACING ---------- */
+
+    --tracking-brand: 0.18em;
+    --tracking-eyebrow: 0.25em;
+    --tracking-label: 0.20em;
+    --tracking-section-label: 0.22em;
+
+
+    /* ---------- GLASS BLUR ---------- */
+
+    --blur-glass-soft: 12px;
+    --blur-glass: 16px;
+    --blur-glass-strong: 24px;
+}/* Black Oaks Design System */
+
+
+/* 
+    Make the fonts loaded by next/font in app/layout.tsx
+    available as Tailwind utilities:
+
+    font-sans
+    font-mono
+*/
+@theme inline {
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+
+/* 
+    Tailwind design tokens.
+    
+    These automatically create utilities such as:
+    
+    text-brand-primary
+    bg-brand-primary
+    border-brand-primary
+    rounded-navbar
+    shadow-navbar
+    tracking-brand
+    max-w-site
+*/
+@theme {
+
+    /* ---------- BRAND ---------- */
+
+    --color-brand-primary: #fb2c36;
+    --color-brand-primary-hover: #e7000b;
+
+
+
+    /* ---------- CONTENT / TEXT ---------- */
+
+    --color-content-on-dark: #ffffff;
+    --color-content-on-dark-muted: #d4d4d8;
+
+    --color-content-primary: #18181b;
+    --color-content-secondary: #27272a;
+    --color-content-muted: #71717a;
+
+
+
+    /* ---------- SURFACES ---------- */
+
+    --color-surface-page: #0b0b0b;
+
+    --color-surface-search: #f5f1e8;
+    --color-surface-search-translucent: rgb(245 241 232 / 0.95);
+    --color-surface-search-hover: #e4e4e7;
+
+    --color-surface-action-dark: #171714;
+
+
+
+    /* ---------- HERO ---------- */
+
+    --color-overlay-hero: rgb(0 0 0 / 0.40);
+
+
+
+    /* ---------- GLASS ---------- */
+
+    --color-glass-navbar: rgb(0 0 0 / 0.20);
+    --color-glass-search: rgb(0 0 0 / 0.30);
+    --color-glass-menu: rgb(0 0 0 / 0.80);
+    --color-glass-highlight: rgb(255 255 255 / 0.10);
+
+    --color-glass-line-subtle: rgb(255 255 255 / 0.07);
+    --color-glass-line: rgb(255 255 255 / 0.10);
+
+
+
+    /* ---------- DIVIDERS / BORDERS ---------- */
+
+    --color-field-divider: #d4d4d8;
+    --color-dropdown-border: #e4e4e7;
+
+
+
+    /* ---------- SITE WIDTH ---------- */
+
+    --container-site: 112.5rem;
+
+
+
+    /* ---------- BORDER RADIUS ---------- */
+
+    --radius-navbar: 2rem;
+    --radius-panel: 0.75rem;
+    --radius-menu: 1rem;
+    --radius-control: 0.5rem;
+    --radius-pill: 9999px;
+
+
+
+    /* ---------- SHADOWS ---------- */
+
+    --shadow-navbar: 0 8px 30px rgb(0 0 0 / 0.25);
+
+    --shadow-search: 0 12px 40px rgb(0 0 0 / 0.40);
+
+    --shadow-dropdown: 0 15px 40px rgb(0 0 0 / 0.30);
+
+
+
+    /* ---------- LETTER SPACING ---------- */
+
+    --tracking-brand: 0.18em;
+    --tracking-eyebrow: 0.25em;
+    --tracking-label: 0.20em;
+    --tracking-section-label: 0.22em;
+
+
+
+    /* ---------- GLASS BLUR ---------- */
+
+    --blur-glass-soft: 12px;
+    --blur-glass: 16px;
+    --blur-glass-strong: 24px;
+}/* Black Oaks Design System */
+
+@theme {
+
+    /* ---------- BRAND ---------- */
+
+    --color-brand-primary: #fb2c36;
+    --color-brand-primary-hover: #e7000b;
+
+
+    /* ---------- CONTENT / TEXT ---------- */
+
+    --color-content-on-dark: #ffffff;
+    --color-content-on-dark-muted: #d4d4d8;
+
+    --color-content-primary: #18181b;
+    --color-content-secondary: #27272a;
+    --color-content-muted: #71717a;
+
+
+    /* ---------- SURFACES ---------- */
+
+    --color-surface-page: #0b0b0b;
+
+    --color-surface-search: #f5f1e8;
+    --color-surface-search-translucent: rgb(245 241 232 / 0.95);
+    --color-surface-search-hover: #e4e4e7;
+
+    --color-surface-action-dark: #171714;
+
+
+    /* ---------- HERO ---------- */
+
+    --color-overlay-hero: rgb(0 0 0 / 0.40);
+
+
+    /* ---------- GLASS ---------- */
+
+    --color-glass-navbar: rgb(0 0 0 / 0.20);
+    --color-glass-search: rgb(0 0 0 / 0.30);
+    --color-glass-menu: rgb(0 0 0 / 0.80);
+    --color-glass-highlight: rgb(255 255 255 / 0.10);
+
+    --color-glass-line-subtle: rgb(255 255 255 / 0.07);
+    --color-glass-line: rgb(255 255 255 / 0.10);
+
+
+    /* ---------- DIVIDERS / BORDERS ---------- */
+
+    --color-field-divider: #d4d4d8;
+    --color-dropdown-border: #e4e4e7;
+
+
+    /* ---------- SITE WIDTH ---------- */
+
+    --container-site: 112.5rem;
+
+
+    /* ---------- BORDER RADIUS ---------- */
+
+    --radius-navbar: 2rem;
+    --radius-panel: 0.75rem;
+    --radius-menu: 1rem;
+    --radius-control: 0.5rem;
+    --radius-pill: 9999px;
+
+
+    /* ---------- SHADOWS ---------- */
+
+    --shadow-navbar: 0 8px 30px rgb(0 0 0 / 0.25);
+    --shadow-search: 0 12px 40px rgb(0 0 0 / 0.40);
+    --shadow-dropdown: 0 15px 40px rgb(0 0 0 / 0.30);
+
+
+    /* ---------- LETTER SPACING ---------- */
+
+    --tracking-brand: 0.18em;
+    --tracking-eyebrow: 0.25em;
+    --tracking-label: 0.20em;
+    --tracking-section-label: 0.22em;
+
+
+    /* ---------- GLASS BLUR ---------- */
+
+    --blur-glass-soft: 12px;
+    --blur-glass: 16px;
+    --blur-glass-strong: 24px;
+}

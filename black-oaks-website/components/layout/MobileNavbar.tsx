@@ -32,9 +32,9 @@ export default function MobileNavbar({
           items-center
           justify-center
           gap-1.5
-          rounded-lg
+          rounded-control
           transition-colors
-          hover:bg-white/10
+          hover:bg-glass-highlight
           lg:hidden
         "
         aria-label="Toggle navigation menu"
@@ -45,7 +45,7 @@ export default function MobileNavbar({
             block
             h-0.5
             w-6
-            bg-white
+            bg-content-on-dark
             transition-transform
             duration-300
             ${
@@ -61,7 +61,7 @@ export default function MobileNavbar({
             block
             h-0.5
             w-6
-            bg-white
+            bg-content-on-dark
             transition-opacity
             duration-300
             ${
@@ -77,7 +77,7 @@ export default function MobileNavbar({
             block
             h-0.5
             w-6
-            bg-white
+            bg-content-on-dark
             transition-transform
             duration-300
             ${
@@ -97,12 +97,12 @@ export default function MobileNavbar({
           right-0
           top-[calc(100%+0.5rem)]
           overflow-hidden
-          rounded-2xl
+          rounded-menu
           border
-          border-white/10
-          bg-black/80
+          border-glass-line
+          bg-glass-menu
           shadow-xl
-          backdrop-blur-xl
+          backdrop-blur-glass-strong
           transition-all
           duration-300
           ease-in-out
@@ -115,6 +115,7 @@ export default function MobileNavbar({
         `}
       >
         <div className="flex flex-col px-5 py-2">
+          
           {items.map((item, index) => (
             <Link
               key={item.href}
@@ -124,12 +125,12 @@ export default function MobileNavbar({
                 py-4
                 text-base
                 font-semibold
-                text-white
+                text-content-on-dark
                 transition-colors
-                hover:text-red-500
+                hover:text-brand-primary
                 ${
                   index !== items.length - 1
-                    ? "border-b border-white/10"
+                    ? "border-b border-glass-line"
                     : ""
                 }
               `}

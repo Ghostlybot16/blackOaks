@@ -16,7 +16,7 @@ export default function Hero() {
             />
 
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-overlay-hero" />
 
             {/* Hero Content Box */}
             <div 
@@ -27,7 +27,7 @@ export default function Hero() {
                     flex
                     min-h-screen
                     w-full
-                    max-w-[1800px]
+                    max-w-site
                     items-center
                     px-6
                     pb-32
@@ -48,8 +48,8 @@ export default function Hero() {
                         text-xs
                         font-semibold
                         uppercase
-                        tracking-[0.25em]
-                        text-red-500
+                        tracking-eyebrow
+                        text-brand-primary
                         sm:text-sm">
                         
                         Black Oaks Real Estate
@@ -64,13 +64,13 @@ export default function Hero() {
                             font-semibold
                             leading-[1.05]
                             tracking-tight
-                            text-white
+                            text-content-on-dark
                             sm:text-6xl
                             lg:text-7xl
                             xl:text-8xl">
 
                                 Moving You Towards What {" "}
-                                <span className="text-red-500">
+                                <span className="text-brand-primary">
                                     Matters.
                                 </span>
                     </h1>
@@ -83,7 +83,7 @@ export default function Hero() {
                             max-w-xl
                             text-base
                             leading-7
-                            text-zinc-300
+                            text-content-on-dark-muted
                             sm:text-lg">
 
                                 Thoughtful guidance, local expertise, and a straightforward
@@ -106,7 +106,7 @@ export default function Hero() {
                         xl:px-16
                     "
                 >
-                    <div className="mx-auto w-full max-w-[1800px]">
+                    <div className="mx-auto w-full max-w-site">
                         <PropertySearch />
 
                     </div>
