@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import MobileNavbar from "./MobileNavbar";
-import { AnimatedBackground } from "../motion-primitives/animated-background";
+import DesktopNavbar from "./DesktopNavbar";
 
 const navItems = [
   {
@@ -111,48 +111,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex">
-          <AnimatedBackground
-            defaultValue={navItems[0].href}
-            className="
-              rounded-pill
-              bg-glass-highlight
-              backdrop-blur-glass-soft
-            "
-            transition={{
-              type: "spring",
-              bounce: 0.2,
-              duration: 0.3,
-            }}
-            enableHover
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                data-id={item.href}
-                className="
-                  relative
-                  z-10
-                  whitespace-nowrap
-                  rounded-pill
-                  px-4
-                  py-2
-                  text-sm
-                  font-semibold
-                  text-content-on-dark
-                  transition-colors
-                  duration-300
-                  hover:text-brand-primary
-                  xl:px-5
-                  xl:text-base
-                "
-              >
-                {item.label}
-              </Link>
-            ))}
-          </AnimatedBackground>
-        </div>
+        <DesktopNavbar items={navItems} />
 
         {/* Mobile Navigation */}
         <MobileNavbar items={navItems} />

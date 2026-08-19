@@ -26,7 +26,7 @@ function SearchDropdown({
     );
 
     return (
-        <div className="relative flex min-h-[96px] flex-1 items-center px-7">
+        <div className="relative flex min-h-24 flex-1 items-center px-7">
 
             <div className="w-full">
 
@@ -98,7 +98,7 @@ function SearchDropdown({
                         top-full
                         z-50
                         mt-3
-                        h-[140px]
+                        h-35
                         overflow-y-auto
                         overscroll-contain
                         rounded-panel
@@ -259,7 +259,7 @@ export default function PropertySearch() {
                 <div
                     className="
                         flex
-                        min-h-[96px]
+                        min-h-24
                         items-center
                         px-5
                         py-4
